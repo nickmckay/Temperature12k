@@ -1,0 +1,335 @@
+# Archive/proxy
+#	Speleothem
+#--------------------
+# Contribution Date
+#	Date: 2012-03-13 13:57:08
+#--------------------
+# Title
+#	Study Name: Okshola cave Norway Speleothem d18O
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Linge, H. and Lauritzen, S.-E. and Andersson, C. and Hansen, J. K. and Skoglund, R. O. and Sundqvist, H. S.
+#	Journal Name: Climate of the Past
+#	Published Title: Stable isotope records for the last 10 000 years from Okshola cave (Fauske, northern Norway) and regional comparisons
+#	Published Date: 2009
+#	DOI: 10.5194/cp-5-667-2009
+#	Abstract: The sensitivity of terrestrial environments to past changes in heat transport is expected to be manifested in Holocene climate proxy records on millennial to seasonal timescales. Stalagmite formation in the Okshola cave near Fauske (northern Norway) began at about 10.4 ka, soon after the valley was deglaciated. Past monitoring of the cave and surface has revealed stable modern conditions with uniform drip rates, relative humidity and temperature. Stable isotope records from two stalagmites provide time-series spanning from c. 10 380 yr to AD 1997; a banded, multi-coloured stalagmite (Oks82) was formed between 10 380 yr and 5050 yr, whereas a pristine, white stalagmite (FM3) covers the period from ~7500 yr to the present. The stable oxygen isotope (d18Oc), stable carbon isotope (d13Cc), and growth rate records are interpreted as showing i) a negative correlation between cave/surface temperature and d18Oc, ii) a positive correlation between wetness and d13Cc, and iii) a positive correlation between temperature and growth rate. Following this, the data from Okshola show that the Holocene was characterised by high-variability climate in the early part, low-variability climate in the middle part, and high-variability climate and shifts between two distinct modes in the late part. A total of nine Scandinavian stalagmite d18Oc records of comparable dating precision are now available for parts or most of the Holocene. None of them show a clear Holocene thermal optimum, suggesting that they are influenced by annual mean temperature (cave temperature) rather than seasonal temperature. For the last 1000 years, d18Oc values display a depletion-enrichment-depletion pattern commonly interpreted as reflecting the conventional view on climate development for the last millennium. Although the d18Oc records show similar patterns and amplitudes of change, the main challenges for utilising high-latitude stalagmites as palaeoclimate archives are i) the accuracy of the age models, ii) the ambiguity of the proxy signals, and iii) calibration with monitoring data.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: Scandinavia
+#	Country: Norway
+#	Northmost Latitude: 67
+# 	Southmost Latitude: 67
+# 	Eastmost Longitute: 15
+# 	Westmost Longitute: 15
+# 	Elevation: 183
+#------------------
+# Data Collection  
+#	Core Name: Okshola cave
+#	First Year: -5565.2
+#	Last Year: 1997
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>speleothems>oxygen isotopes
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	d18O	delta 18O
+# 
+age_AD	d18O
+1997	-7.06279
+1929.2	-6.64925
+1861.4	-6.67084
+1793.6	-6.68786
+1725.8	-6.4392
+1658	-6.64301
+1633.8	-6.49789
+1609.65	-6.4607
+1585.5	-7.02146
+1561.35	-6.89498
+1537.2	-7.14933
+1513.05	-7.04586
+1488.9	-7.19681
+1464.75	-7.05754
+1440.6	-7.00071
+1416.45	-6.92776
+1392.3	-6.71215
+1368.15	-6.6841
+1344	-7.11121
+1285.25	-6.84969
+1255.9	-7.04259
+1226.55	-7.03621
+1197.2	-6.98184
+1167.85	-6.66913
+1138.5	-6.83532
+1109.15	-6.94419
+1079.8	-6.90492
+1050.45	-6.7597
+1021.1	-7.00477
+991.75	-6.86414
+962.4	-7.12801
+933.05	-6.91138
+903.7	-7.24612
+874.35	-6.91626
+845	-6.84203
+818.4	-6.88151
+791.7	-7.10188
+765	-7.17702
+738.3	-7.23588
+711.6	-6.85239
+684.9	-6.88493
+658.2	-6.91597
+631.5	-6.88816
+604.8	-7.12931
+578.1	-6.95624
+551.4	-7.00273
+524.7	-6.94408
+498	-7.11937
+471.3	-6.8376
+444.6	-7.08829
+417.9	-6.99205
+391.2	-6.84814
+364.5	-7.13915
+337.8	-6.84799
+311.1	-7.13008
+284.4	-7.16983
+257.7	-7.24783
+231	-7.12134
+188.3	-6.88875
+145.67	-7.05146
+103.04	-6.96241
+60.41	-6.56264
+17.78	-6.7949
+-24.85	-6.6271
+-67.48	-6.84119
+-110.11	-6.60096
+-152.74	-6.71837
+-195.37	-6.68409
+-238	-6.77677
+-265.78	-6.63522
+-293.57	-6.8238
+-321.36	-6.60507
+-349.15	-6.65924
+-376.94	-6.34354
+-404.73	-6.74387
+-432.52	-6.79124
+-460.31	-6.86756
+-488.1	-6.65188
+-515.89	-6.74634
+-543.68	-6.75135
+-571.47	-6.89424
+-599.26	-6.5232
+-627.05	-6.86232
+-654.84	-7.18448
+-682.63	-7.20454
+-710.42	-7.1796
+-738.21	-7.19836
+-766	-7.11537
+-785.875	-7.12886
+-805.75	-6.92533
+-825.625	-7.01817
+-845.5	-7.27074
+-865.375	-7.04498
+-885.25	-7.10801
+-905.125	-7.03202
+-925	-6.85995
+-944.875	-6.99726
+-964.75	-6.94092
+-984.625	-6.95088
+-1004.5	-6.87628
+-1024.38	-7.20543
+-1044.25	-6.91339
+-1064.13	-6.81681
+-1084	-6.86749
+-1116.63	-7.03713
+-1149.3	-6.83548
+-1181.97	-6.81365
+-1214.64	-6.4906
+-1247.31	-6.97167
+-1279.98	-7.26574
+-1312.65	-7.26485
+-1345.32	-6.6004
+-1377.99	-6.7634
+-1410.66	-6.84289
+-1443.33	-7.09883
+-1476	-7.08614
+-1511.68	-7.05357
+-1547.42	-6.90646
+-1583.16	-6.71679
+-1618.9	-7.11536
+-1654.64	-6.77638
+-1690.38	-7.04072
+-1726.12	-6.95382
+-1761.86	-6.81582
+-1797.6	-6.76135
+-1833.34	-6.87173
+-1869.08	-6.65384
+-1904.82	-6.7513
+-1940.56	-6.73507
+-1976.3	-6.67401
+-2012.04	-6.8458
+-2047.78	-6.52009
+-2083.52	-6.81098
+-2119.26	-6.52446
+-2155	-6.55713
+-2175.68	-6.57481
+-2196.37	-6.81131
+-2217.06	-6.6625
+-2237.75	-6.63246
+-2258.44	-6.85376
+-2279.13	-6.70743
+-2299.82	-6.64303
+-2320.51	-6.75683
+-2341.2	-6.78814
+-2361.89	-6.87316
+-2382.58	-6.7045
+-2403.27	-6.8821
+-2423.96	-6.83157
+-2444.65	-6.61345
+-2465.34	-6.6165
+-2486.03	-6.89667
+-2506.72	-6.87151
+-2527.41	-6.82728
+-2548.1	-6.78186
+-2568.79	-6.78974
+-2589.48	-6.92958
+-2610.17	-6.75579
+-2630.86	-6.67209
+-2651.55	-6.90374
+-2672.24	-6.53578
+-2692.93	-6.54377
+-2713.62	-6.46644
+-2734.31	-6.96909
+-2755	-6.43864
+-2782.83	-6.7102
+-2810.56	-6.50728
+-2838.29	-6.24442
+-2866.02	-6.53465
+-2893.75	-6.52049
+-2921.48	-6.59135
+-2949.21	-6.64688
+-2976.94	-6.72837
+-3004.67	-6.515
+-3032.4	-6.60804
+-3060.13	-6.6054
+-3087.86	-6.70319
+-3115.59	-6.77442
+-3143.32	-6.64145
+-3171.05	-6.71725
+-3198.78	-6.78663
+-3226.51	-6.61632
+-3254.24	-6.55062
+-3281.97	-6.38353
+-3309.7	-6.50554
+-3337.43	-6.45164
+-3365.16	-6.57642
+-3392.89	-6.45088
+-3420.62	-6.6516
+-3448.35	-6.94839
+-3476.08	-6.55811
+-3503.81	-6.6826
+-3531.54	-6.66349
+-3559.27	-6.42732
+-3587	-6.31309
+-3607.44	-6.63
+-3627.88	-6.3217
+-3648.31	-6.48183
+-3668.75	-6.85327
+-3689.19	-6.45
+-3709.63	-6.8042
+-3730.06	-6.4624
+-3750.5	-6.46343
+-3770.94	-6.45
+-3791.38	-6.441
+-3811.81	-6.5814
+-3832.25	-6.20294
+-3852.69	-6.28
+-3873.13	-6.6019
+-3893.56	-6.82179
+-3914	-6.38721
+-3935.26	-6.51004
+-3956.43	-6.61723
+-3977.6	-6.78255
+-3998.77	-6.54645
+-4019.94	-6.59641
+-4041.11	-6.83329
+-4062.28	-6.37052
+-4083.45	-6.68875
+-4104.62	-6.58458
+-4125.79	-6.74667
+-4146.96	-6.63985
+-4168.13	-6.6298
+-4189.3	-7.03186
+-4210.47	-6.76253
+-4231.64	-6.61804
+-4252.81	-6.30824
+-4273.98	-6.38789
+-4295.15	-6.55204
+-4316.32	-6.84822
+-4337.49	-6.74708
+-4358.66	-7.01336
+-4379.83	-6.68074
+-4401	-6.51977
+-4418.56	-6.73027
+-4436.24	-6.77079
+-4453.92	-6.7364
+-4471.6	-6.85066
+-4489.28	-6.82349
+-4506.96	-6.69242
+-4524.64	-6.64464
+-4542.32	-6.72911
+-4560	-6.68468
+-4577.68	-6.67135
+-4595.36	-6.59117
+-4613.04	-6.61034
+-4630.72	-6.7993
+-4648.4	-6.83604
+-4666.08	-6.6847
+-4683.76	-6.99457
+-4701.44	-6.60749
+-4719.12	-6.87986
+-4736.8	-6.48306
+-4754.48	-6.74395
+-4772.16	-6.57702
+-4789.84	-6.45709
+-4807.52	-6.42492
+-4825.2	-6.61774
+-4842.88	-6.48261
+-4860.56	-6.58489
+-4878.24	-6.72623
+-4895.92	-6.6666
+-4913.6	-6.76234
+-4931.28	-6.50007
+-4948.96	-6.46617
+-4966.64	-6.89856
+-4984.32	-6.55747
+-5002	-6.58873
+-5027.6	-6.45852
+-5053.2	-6.65848
+-5078.8	-6.6183
+-5104.4	-6.56486
+-5130	-6.59282
+-5155.6	-6.59216
+-5181.2	-6.36197
+-5206.8	-6.38806
+-5232.4	-6.19445
+-5258	-6.45566
+-5283.6	-6.1201
+-5309.2	-6.05392
+-5334.8	-5.90586
+-5360.4	-6.02094
+-5386	-6.29498
+-5411.6	-5.8694
+-5437.2	-6.23559
+-5462.8	-5.91854
+-5488.4	-6.23929
+-5514	-5.92158
+-5539.6	-5.95353
+-5565.2	-5.87287

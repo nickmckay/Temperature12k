@@ -1,0 +1,171 @@
+# Archive/proxy
+#	Marine sediment
+#--------------------
+# Contribution Date
+#	Date: 2012-10-16 01:55:02
+#--------------------
+# Title
+#	Study Name: MD95-2011 Norwegian Sea Marine sediment Alkenone
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Calvo, Eva and Grimalt, Joan and Jansen, Eystein
+#	Journal Name: Quaternary Science Reviews
+#	Published Title: High resolution U37K sea surface temperature reconstruction in the Norwegian Sea during the Holocene
+#	Published Date: 2002
+#	DOI: 10.1016/S0277-3791(01)00096-8
+#	Abstract: A study of the C37 alkenone distributions in core MD952011 from the Norwegian Sea (about 65°N) has allowed the evaluation of the applicability of the U37K and U37K' indexes in these cold waters. The use of the first defined U37K appears to be the most appropriate to estimate sea surface temperatures (SST) allowing a high resolution SST reconstruction for the Holocene section. At this site, the warmest SST values were recorded during the first-half of the Holocene, between 8.5 and 5.5 ka BP, after a gradual warming. Since then, the SST evolution of the late Holocene exhibits a cooling trend towards present values, in concordance with the decreasing summer insolation at these high latitudes. In terms of variability, higher SST changes were observed in the warmer than in the cooler periods, ±2°C and ±0.5°C, respectively.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: North Atlantic
+#	Country: Norwegian Sea
+#	Northmost Latitude: 66.97
+# 	Southmost Latitude: 66.97
+# 	Eastmost Longitute: 7.64
+# 	Westmost Longitute: 7.64
+# 	Elevation: 0
+#------------------
+# Data Collection  
+#	Core Name: MD95-2011
+#	First Year: -6540
+#	Last Year: 1440
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>paleocean>reconstruction>Sea Surface Temperature from Uk'37 (Prahl et al '88) 
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	sst	Sea Surface Temperature (C)
+# 
+age_AD	sst
+1440	11.1
+1430	11
+1420	11.3
+1410	11.3
+1400	11.2
+1390	11.2
+1380	10.9
+1370	11.1
+1350	11.2
+1340	11.1
+1320	11.2
+1310	11.1
+1300	11.4
+1290	11.3
+1280	11.6
+1270	10.9
+1260	11.5
+1220	10.7
+1200	11.6
+1160	11.2
+1120	11
+1080	10.9
+1030	10.9
+1000	11.1
+920	11.1
+900	11.5
+870	11.3
+830	10.7
+810	10.7
+780	10.8
+750	11
+720	10.9
+690	10.9
+660	10.9
+630	11
+600	11.1
+570	11.2
+540	11.1
+530	11.1
+450	11.1
+420	11
+360	10.9
+330	11
+290	11.2
+240	11
+200	11.2
+160	11
+120	11.1
+90	11.3
+60	10.9
+10	11.1
+-60	11.3
+-130	11.4
+-180	11.4
+-240	11.5
+-290	11.3
+-360	10.6
+-390	11.1
+-460	10.9
+-510	10.9
+-540	11.2
+-580	10.9
+-640	10.8
+-700	11.4
+-740	11.4
+-800	11.7
+-870	12
+-950	11.8
+-1020	11.9
+-1090	11.9
+-1170	11.6
+-1240	11.9
+-1310	11.7
+-1390	11.4
+-1460	11.8
+-1530	11.8
+-1610	11.7
+-1680	11.7
+-1750	12.2
+-1830	11.9
+-1890	12.3
+-1960	12
+-2020	11.8
+-2090	12.2
+-2160	11.8
+-2290	12
+-2340	11.9
+-2420	11.9
+-2650	11.8
+-2810	11.8
+-2890	12
+-2970	12
+-3060	11.9
+-3140	12.2
+-3220	12.1
+-3380	11.8
+-3460	11.8
+-3540	11.7
+-3630	11.8
+-3710	12
+-3790	12.2
+-3870	12.9
+-3950	12.3
+-4070	12.8
+-4120	12.6
+-4360	12.9
+-4600	12.5
+-4770	12.7
+-4850	12.7
+-4930	12.8
+-5010	12.7
+-5090	12.7
+-5180	12.8
+-5260	12.7
+-5340	12.3
+-5420	12.1
+-5500	12.2
+-5580	12.2
+-5670	12.1
+-5750	12.2
+-6010	12.1
+-6150	12.4
+-6280	13
+-6410	13
+-6540	12.7

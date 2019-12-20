@@ -1,0 +1,93 @@
+# Archive/proxy
+#	Lake sediment
+#--------------------
+# Contribution Date
+#	Date: 2012-03-13 17:30:12
+#--------------------
+# Title
+#	Study Name: Lake Hampträsk Finland Lake sediment Chironomids
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Luoto, Tomi P. and Sarmaja-Korjonen, Kaarina and Nevalainen, Liisa and Kauppila, Tommi
+#	Journal Name: The Holocene
+#	Published Title: A 700 year record of temperature and nutrient changes in a small eutrophied lake in southern Finland
+#	Published Date: 2009
+#	DOI: 10.1177/0959683609341002
+#	Abstract: This study aimed to distinguish natural and anthropogenic environmental changes, mainly in climate and nutrient conditions, during the past c. 700 years in Lake Hampträsk, southern Finland. We used sedimentary assemblages of aquatic organisms and physical properties of the sediment as proxies for the past environmental conditions. The results of diatom-inferred phosphorus reconstruction indicated that the lake was already meso-eutrophic at c. AD 1400, possibly because the preceding cultivation of the area had increased the lake’s nutrient condition. Chironomid-inferred temperatures indicated favourable climatic conditions at the end of the ‘Medieval Warm Period’, but the temperatures steadily decreased until a significant drop in the values occurred at c. AD 1700, representing the coldest period of the ‘Little Ice Age’ (LIA) in southern Finland. This cold period was illustrated by major changes in the lake’s ecosystem and physical environment. After the LIA, the chironomid-inferred temperatures increased, as expected in the light of modern observations. However, the diatom-inferred phosphorus showed a decreasing trend, which is in contrast to the measured phosphorus values that imply a currently eutrophic condition. The reason for the underestimation may be the predominance of periphytic taxa that are assigned low TP optima in the inference model.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: Scandinavia
+#	Country: Finland
+#	Northmost Latitude: 60.283
+# 	Southmost Latitude: 60.283
+# 	Eastmost Longitute: 25.417
+# 	Westmost Longitute: 25.417
+# 	Elevation: 
+#------------------
+# Data Collection  
+#	Core Name: Lake Hampträsk
+#	First Year: 1330
+#	Last Year: 2000
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>paleolimnology>reconstruction
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	temp	Temperature (C)
+# 
+age_AD	temp
+2000	16.5
+1985	15.2
+1970	15.6
+1955	15.8
+1940	15.8
+1925	16.4
+1910	16
+1890	16.3
+1875	15.8
+1860	15.9
+1845	15.6
+1830	16.3
+1815	15.8
+1800	15.7
+1785	14.7
+1770	15.2
+1760	15.6
+1745	14.7
+1730	14.2
+1715	14.5
+1700	12.8
+1685	13.2
+1670	13.9
+1655	13.4
+1640	15.1
+1625	15.2
+1610	14.4
+1595	15.2
+1580	15
+1565	15
+1550	14.8
+1540	14.9
+1530	15.3
+1510	15.1
+1500	15.7
+1490	15.9
+1480	15.4
+1470	14.9
+1450	15.5
+1430	15.6
+1420	15.4
+1405	15.9
+1390	16.1
+1375	14.7
+1360	15.5
+1345	16.3
+1330	16.4

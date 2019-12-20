@@ -1,0 +1,77 @@
+# Archive/proxy
+#	Historic
+#--------------------
+# Contribution Date
+#	Date: 2012-07-25 19:20:02
+#--------------------
+# Title
+#	Study Name:  Iceland Historic Ice cover
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Bergthórsson, Páll
+#	Journal Name: Jökull
+#	Published Title: An Estimate of Drift Ice and Temperature in Iceland in 1000 Years
+#	Published Date: 1969
+#	DOI: 
+#	Abstract: A fairly good correlation is found between annual temperature ans the incidence of drift ice in Iceland. This relation is used to estimate the temperature in Iceland in the period 1591—1846. Furthermore, the temperature and ice incidence in the years 1591—1969 (estimated and measured) are found to ve correlated with the frequency of severe years, defined in a special manner. This makes it possible to estimate the temperture and ice incidence in the period 930-1591 A.D. The graphs of temperature and ice seem to be in good accordance with the results of analysis of O18 in glacier ice core at Camp Century, Greenland.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: North Atlantic
+#	Country: Iceland
+#	Northmost Latitude: 64.7741
+# 	Southmost Latitude: 64.7741
+# 	Eastmost Longitute: -18.3691
+# 	Westmost Longitute: -18.3691
+# 	Elevation: 
+#------------------
+# Data Collection  
+#	Core Name: 
+#	First Year: 945
+#	Last Year: 1935
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>historical>document
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	temp	Temperature (C)
+# 
+age_AD	temp
+1935	4.36052
+1905	3.28887
+1875	2.94755
+1845	3.34403
+1815	3.09126
+1785	2.99343
+1755	2.92643
+1725	3.30548
+1695	3.06462
+1665	3.40905
+1635	3.11281
+1605	3.0841
+1575	3.30505
+1545	3.25014
+1515	3.31698
+1485	3.31741
+1365	3.31042
+1335	3.24927
+1305	3.18333
+1275	3.05731
+1245	3.30998
+1215	3.25714
+1185	3.43729
+1155	4.28395
+1125	4.70907
+1095	4.27927
+1065	3.45829
+1035	3.73517
+1005	4.05258
+975	3.32854
+945	4.0258

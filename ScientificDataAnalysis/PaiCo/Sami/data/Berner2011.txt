@@ -1,0 +1,346 @@
+# Archive/proxy
+#	Marine sediment
+#--------------------
+# Contribution Date
+#	Date: 2012-10-16 01:54:36
+#--------------------
+# Title
+#	Study Name: MD95-2011 Norwegian Sea Marine sediment Diatoms
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Berner, K. S. and Koç, N. and Godtliebsen, F. and Divine, D.
+#	Journal Name: Paleoceanography
+#	Published Title: Holocene climate variability of the Norwegian Atlantic Current during high and low solar insolation forcing
+#	Published Date: 2011
+#	DOI: 10.1029/2010PA002002
+#	Abstract: A high-resolution sediment core from the V\oring Plateau has been studied to document the centennial to millennial variability of the surface water conditions during the Holocene Climate Optimum (HCO) and the late Holocene period (LHP) in order to evaluate the effects of solar insolation on surface ocean climatology. Quantitative August summer sea surface temperatures (SSSTs) with a time resolution of 2–40 years are reconstructed by using three different diatom transfer function methods. Spectral- and scale-space methods are applied to the records to explore the variability present in the time series at different time scales. The SSST development in core MD95-2011 shows a delayed response to Northern Hemisphere maximum summer insolation at  11,000 years B.P. The record shows the maximum SSST of the HCO to be from 7.3 to 8.9 kyr B.P., which implies that the site was located in the regional warm water pool removed from the oceanic fronts and Arctic waters. Superimposed on the general cooling trend are higher-frequency variabilities at time scales of 80–120, 210–320, 320–640, and 640–1280 years. The climate variations at the time scale of 320–640 years are documented both for periods of high and low solar orbital insolation. We found evidence that the submillennial-scale mode of variability (640–900 years) in SSST evident during the LHP is directly associated with varying solar forcing. At the shorter scale of 260–450 years, the SSST during the LHP displays a lagged response to solar forcing with a phase-locked behavior indicating the existence of a feedback mechanism in the climate system triggered by variations in the solar constant as well as the role of the thermal inertia of the ocean. The abruptness of the cooling events in the LHP, especially pronounced during the onsets of the Holocene Cold Period I (approximately 2300 years B.P.) and the Little Ice Age (approximately 550 years B.P.), can be explained by a shutdown of deep convection in the Nordic Seas in response to negative solar insolation anomalies. These cooling events are on the order of 1.5°C.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: North Atlantic
+#	Country: Norwegian Sea
+#	Northmost Latitude: 66.97
+# 	Southmost Latitude: 66.97
+# 	Eastmost Longitute: 7.64
+# 	Westmost Longitute: 7.64
+# 	Elevation: 0
+#------------------
+# Data Collection  
+#	Core Name: MD95-2011
+#	First Year: -4076.1
+#	Last Year: 1995.4
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>paleocean>reconstruction>Sea Surface Temperature (C) 
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	sst	Sea Surface Temperature (C)
+# 
+age_AD	sst
+1995.4	10.2475
+1991.1	9.93495
+1985.1	10.3486
+1979.9	10.8137
+1975	10.3069
+1970.1	10.1987
+1965	10.6744
+1960	10.4874
+1955.2	10.4802
+1950.6	10.4316
+1946.4	10.3441
+1942.6	10.1976
+1939.2	9.94177
+1936.2	10.2465
+1933.7	10.3091
+1931.8	10.5021
+1930.3	9.71059
+1928.9	10.1213
+1927.2	10.6279
+1924.6	10.3989
+1920.7	10.1562
+1915.2	10.3988
+1908	9.97116
+1899.3	9.81941
+1889.2	10.4567
+1877.8	10.0531
+1865.2	10.6238
+1851.6	10.1062
+1837	10.5741
+1821.5	10.1164
+1805.3	10.6032
+1788.5	10.5351
+1771.3	10.3872
+1753.6	10.3021
+1735.6	10.3557
+1717.5	9.98546
+1699.4	10.2224
+1681.3	10.3182
+1663.4	10.1751
+1645.8	10.5092
+1628.5	10.1342
+1611.9	9.60502
+1595.8	10.2526
+1580.5	9.93182
+1566	10.1033
+1552.4	10.1318
+1539.5	9.90972
+1527.3	9.62181
+1515.8	10.1878
+1504.9	9.61285
+1494.6	9.8807
+1484.9	10.2089
+1475.6	10.0801
+1466.7	10.0051
+1458.2	9.97152
+1450	9.80507
+1442.2	9.30174
+1434.6	10.0989
+1427.1	9.66697
+1419.8	9.79304
+1414	9.78687
+1409.7	10.1931
+1405.3	9.49782
+1401	9.99325
+1396.6	10.0112
+1392.1	9.57557
+1387.7	9.79503
+1383.1	10.3716
+1378.5	10.7675
+1373.9	10.3015
+1369.2	10.7571
+1364.5	10.9221
+1359.6	10.6962
+1354.7	10.4108
+1349.8	10.3792
+1344.7	10.6756
+1339.6	10.2003
+1329.2	10.7035
+1323.8	10.0836
+1318.3	10.1802
+1312.8	10.2853
+1307.1	9.73541
+1301.4	10.6234
+1295.5	10.3526
+1289.5	10.5218
+1283.4	10.1007
+1277.2	10.3398
+1270.9	10.9197
+1264.5	9.97714
+1257.9	10.3431
+1251.2	10.4352
+1244.4	10.4536
+1237.5	10.2456
+1230.4	10.458
+1223.3	10.2323
+1216	9.90654
+1208.5	10.0018
+1201	10.1752
+1193.3	10.1555
+1185.5	10.31
+1177.6	9.97843
+1169.5	9.92545
+1161.3	10.0838
+1153	10.2683
+1144.5	10.2706
+1135.9	10.2555
+1127.2	10.2683
+1118.4	10.2706
+1109.5	10.4437
+1100.4	10.6707
+1091.2	10.5718
+1082	10.636
+1072.6	10.4771
+1063.1	10.1984
+1053.5	10.8871
+1043.9	10.4754
+1034.1	10.4251
+1024.2	10.2876
+1014.3	10.4069
+1004.2	10.5756
+994	10.9428
+983.8	10.5078
+973.4	10.3748
+963	10.0874
+952.4	10.5621
+941.8	10.29
+931.1	10.4755
+920.2	10.8161
+909.3	10.7187
+898.3	11.2032
+887.2	11.31
+876	10.9428
+864.7	10.6819
+853.4	11.2742
+841.9	10.5021
+830.4	10.6746
+818.8	10.7136
+807.1	10.4963
+795.3	10.7422
+783.4	10.3953
+771.5	10.3976
+759.5	10.5862
+747.4	10.0343
+735.2	10.4764
+722.9	10.0496
+710.6	10.1461
+698.2	10.1856
+685.8	10.9432
+673.3	10.2439
+660.7	10.2711
+648	10.5614
+635.3	10.3516
+622.6	10.038
+609.8	10.4802
+596.9	10.5782
+584	10.6686
+571.1	10.7675
+558.1	10.4535
+545.2	11.1143
+532.1	10.4365
+519.1	10.1557
+506	10.4445
+493	10.7043
+479.9	10.6502
+466.8	10.1643
+453.8	10.5446
+440.7	10.3205
+427.7	10.3155
+414.6	10.5336
+401.6	10.5491
+388.6	10.3853
+375.7	10.6336
+362.8	10.4685
+349.9	10.3814
+337.1	10.419
+324.3	10.4213
+311.6	10.5253
+299	10.2192
+286.4	10.4339
+273.9	10.5301
+261.4	10.6715
+249.1	9.83745
+236.8	10.4076
+224.5	10.325
+212.4	10.4571
+200.3	9.73376
+188.3	10.4793
+176.3	10.5719
+164.5	10.1528
+152.7	10.4474
+141	10.2335
+129.3	10.6345
+117.7	10.5028
+106.2	10.1434
+94.7	10.4129
+83.3	10.5912
+71.9	10.7858
+60.6	10.0252
+49.2	10.4125
+38	10.1536
+26.7	10.0339
+15.5	10.6027
+4.4	10.0681
+-6.8	9.65882
+-17.9	10.3951
+-29.1	9.54885
+-40.2	9.67012
+-51.3	9.60315
+-62.4	9.71098
+-73.5	9.48452
+-84.6	10.017
+-95.7	9.73464
+-106.8	9.91332
+-118	10.1948
+-129.1	10.0309
+-140.2	9.83135
+-151.4	10.0682
+-162.5	9.67069
+-207.3	9.94772
+-218.5	9.62563
+-229.7	9.60868
+-240.9	10.0657
+-252.2	10.0743
+-263.5	10.2374
+-274.7	9.57675
+-286	10.2945
+-297.4	10.6303
+-308.7	10.1232
+-320.1	10.3832
+-331.5	10.5741
+-354.3	10.968
+-365.8	10.6731
+-377.3	10.5228
+-388.8	10.7139
+-412	10.626
+-435.3	11.0266
+-470.6	10.8237
+-482.5	10.6189
+-494.4	10.1534
+-518.3	10.4828
+-554.7	10.9106
+-566.9	10.7186
+-591.6	10.3963
+-604	10.3731
+-616.5	11.6938
+-629	9.7568
+-654.4	10.2462
+-667.1	11.6827
+-680	10.6295
+-705.9	10.5954
+-732.1	9.95749
+-745.4	10.9836
+-758.7	10.8332
+-785.6	10.6502
+-799.2	11.1408
+-812.9	11.519
+-840.5	11.1347
+-868.6	11.4579
+-882.7	11.1129
+-897	10.7321
+-940.5	10.4353
+-955.2	11.3509
+-970	10.4546
+-984.9	10.1519
+-1015	10.468
+-1030.3	10.83
+-1187.6	11.1867
+-1269.3	11.0089
+-1319.1	10.7335
+-1352.7	11.4751
+-1437.4	11.0579
+-1523.2	10.3079
+-1609.6	10.3525
+-1696.4	10.9188
+-1783.2	11.4397
+-1870.1	11.1998
+-1957.2	11.4062
+-2044.7	11.6514
+-2132.5	11.7281
+-2220.8	12.1743
+-2309.6	12.3681
+-2398.9	11.6031
+-2488.8	11.8166
+-2670.2	12.4297
+-2761.5	12.8101
+-2853	12.8988
+-2944.4	12.775
+-3035.6	11.7545
+-3126.5	11.9068
+-3216.7	12.4672
+-3306.2	12.8888
+-3394.7	12.887
+-3482.3	13.2183
+-3569	12.8591
+-3654.9	13.709
+-3740.2	12.1108
+-3824.9	12.4585
+-3909	13.0783
+-3992.8	13.2063
+-4076.1	12.5595

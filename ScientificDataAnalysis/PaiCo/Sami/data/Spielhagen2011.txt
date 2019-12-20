@@ -1,0 +1,98 @@
+# Archive/proxy
+#	Marine sediment
+#--------------------
+# Contribution Date
+#	Date: 2012-10-16 01:55:34
+#--------------------
+# Title
+#	Study Name: MSM5/5-712   Marine sediment Planktic foraminifers
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Spielhagen, Robert F. and Werner, Kirstin and S\orensen, Steffen Aagaard and Zamelczyk, Katarzyna and Kandiano, Evguenia and Budeus, Gereon and Husum, Katrine and Marchitto, Thomas M. and Hald, Morten
+#	Journal Name: Science
+#	Published Title: Enhanced Modern Heat Transfer to the Arctic by Warm Atlantic Water
+#	Published Date: 2011
+#	DOI: 10.1126/science.1197397
+#	Abstract: The Arctic is responding more rapidly to global warming than most other areas on our planet. Northward-flowing Atlantic Water is the major means of heat advection toward the Arctic and strongly affects the sea ice distribution. Records of its natural variability are critical for the understanding of feedback mechanisms and the future of the Arctic climate system, but continuous historical records reach back only ~150 years. Here, we present a multidecadal-scale record of ocean temperature variations during the past 2000 years, derived from marine sediments off Western Svalbard (79°N). We find that early–21st-century temperatures of Atlantic Water entering the Arctic Ocean are unprecedented over the past 2000 years and are presumably linked to the Arctic amplification of global warming.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: North Atlantic
+#	Country: 
+#	Northmost Latitude: 78.9157
+# 	Southmost Latitude: 78.9157
+# 	Eastmost Longitute: 6.7673
+# 	Westmost Longitute: 6.7673
+# 	Elevation: 
+#------------------
+# Data Collection  
+#	Core Name: MSM5/5-712 
+#	First Year: -94
+#	Last Year: 2007
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>paleocean>reconstruction>Sea Surface Temperature (C) 
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	sst	Sea Surface Temperature (C)
+# 
+age_AD	sst
+2007	6
+1998	5.4
+1980	5.8
+1962	5.4
+1944	4.6
+1926	5.1
+1908	5.4
+1890	4.1
+1871	4.1
+1853	4.1
+1835	3.2
+1799	4.1
+1781	3.3
+1745	3.5
+1709	3.7
+1673	3.3
+1637	3.1
+1600	3.3
+1564	3.3
+1528	3.1
+1492	3.2
+1447	2.9
+1394	3.5
+1340	4.1
+1286	3.3
+1233	3.4
+1179	3.3
+1125	3.6
+1074	4.1
+1024	4.4
+974	3.6
+923	3.3
+873	4.1
+823	4.4
+773	4.1
+722	3.7
+672	3.3
+621	3.1
+570	3.3
+519	4.1
+468	3.3
+417	3.3
+366	3.1
+315	3.2
+264	3.2
+213	3.3
+161	3.1
+110	3.3
+59	2.9
+8	2.8
+-43	2.9
+-94	3.1

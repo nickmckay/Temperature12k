@@ -1,0 +1,148 @@
+# Archive/proxy
+#	Marine sediment
+#--------------------
+# Contribution Date
+#	Date: 2012-03-13 13:58:38
+#--------------------
+# Title
+#	Study Name: MD99-2275 North Icelandic Shelf Marine sediment Diatoms
+#--------------------
+#	Investigators: 
+#--------------------
+# Description and Notes
+#--------------------
+# Publication
+#	Citation: Jiang, Hui and Eiriksson, Jon and Schulz, Michael and Knudsen, Karen-Luise and Seidenkrantz, Marit-Solveig
+#	Journal Name: Geology
+#	Published Title: Evidence for solar forcing of sea-surface temperature on the North Icelandic Shelf during the late Holocene
+#	Published Date: 2005
+#	DOI: 10.1130/G21130.1
+#	Abstract: Diatom proxies from the modern position of the oceanographic Polar Front north of Iceland record variability in sea-surface temperatures (SSTs) during the past 2 k.y. The sedimentary record is dated with tephrochronology, alleviating marine 14C reservoir age uncertainties. Comparison of changes in SSTs on the North Icelandic Shelf with variations in the atmospheric circulation above Greenland, North American Atlantic coastal SSTs, and mean temperature anomalies for the Northern Hemisphere suggests synchronous North Atlantic-wide fluctuations, which would seem to imply a common forcing factor. A positive and significant correlation between our SST record from the North Icelandic Shelf and reconstructed solar irradiance, together with modeling results, supports the hypothesis that solar forcing is an important constituent of natural climate variability in the northern North Atlantic region.
+#----------------------
+#	Science Keywords: PAGES 2k Network, PAGES Arctic 2k, Arctic 2k, temperature, decadal resolution
+#-------------------- 
+# Site Name
+#	Region: North Atlantic
+#	Country: North Icelandic Shelf
+#	Northmost Latitude: 66.55
+# 	Southmost Latitude: 66.55
+# 	Eastmost Longitute: -17.37
+# 	Westmost Longitute: -17.37
+# 	Elevation: 0
+#------------------
+# Data Collection  
+#	Core Name: MD99-2275
+#	First Year: -36.079
+#	Last Year: 1948.69
+#	Time Unit: AD
+#------------------
+#  Searchable Controlled Keywords
+#	>paleocean>reconstruction>Sea Surface Temperature (C)
+#----------------
+# Variables 
+#	age_AD	Age (years AD)
+#	sst	Sea Surface Temperature (C)
+# 
+age_AD	sst
+1948.69	6.0705
+1943.44	6.8495
+1935.56	7.0073
+1930.31	7.3879
+1922.43	5.8513
+1909.3	6.5327
+1896.17	6.5746
+1883.04	7.4927
+1869.92	7.1984
+1856.79	7.0789
+1843.66	5.5579
+1830.53	6.5524
+1817.4	6.3
+1804.27	7.3933
+1791.15	7.0554
+1778.02	7.2154
+1764.89	5.7278
+1751.76	7.3543
+1738.63	7.2757
+1725.5	7.0237
+1712.37	7.0936
+1699.25	7.8395
+1686.12	7.0945
+1672.99	6.5663
+1659.86	7.2932
+1646.73	6.7329
+1633.6	6.4874
+1620.47	6.6389
+1607.35	6.1653
+1594.22	6.9067
+1581.09	6.993
+1567.96	6.9085
+1554.83	6.7351
+1541.7	6.9503
+1528.58	7.0301
+1515.45	6.6508
+1502.32	6.7056
+1489.19	6.6986
+1476.5	7.608
+1464.83	6.1022
+1453.17	6.9607
+1441.5	6.8487
+1429.83	7.0327
+1418.17	6.3605
+1404.5	6.858
+1386.17	6.719
+1367.83	6.0741
+1349.5	6.6948
+1331.17	6.2925
+1312.83	6.8942
+1290.91	7.1933
+1260.61	7.0332
+1230.3	7.4312
+1200	7.6023
+1169.7	7.3866
+1139.39	7.0919
+1109.09	7.0426
+1083.57	6.4842
+1060.1	7.6362
+1036.63	6.7832
+1013.16	7.114
+989.694	7.6157
+966.225	7.7419
+942.755	7.3443
+919.286	7.6977
+895.816	6.9998
+877.041	6.2986
+862.014	7.472
+835.396	7.8746
+808.777	6.8239
+782.158	6.395
+755.54	7.5316
+728.921	7.7732
+702.302	7.423
+675.683	6.7734
+649.065	6.964
+622.446	7.4861
+595.827	8.1686
+569.209	7.789
+542.59	7.8874
+515.971	7.6365
+489.353	7.5636
+462.734	8.5481
+436.115	7.6091
+409.496	7.1479
+382.878	7.6675
+356.259	7.8094
+329.64	8.051
+303.022	7.8018
+276.403	7.0808
+249.784	6.9199
+223.166	7.7717
+196.547	7.5475
+169.928	7.7576
+143.309	7.6982
+117.225	7.428
+91.674	7.021
+66.123	7.289
+40.573	8.1268
+15.022	7.9264
+-10.529	7.4397
+-36.079	7.4236
