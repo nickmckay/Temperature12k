@@ -1,0 +1,3 @@
+[submodule "ScientificDataAnalysis/GAM"]
+	path = ScientificDataAnalysis/GAM
+	url = https://github.com/Chilipp/gridding-temp12k.git
