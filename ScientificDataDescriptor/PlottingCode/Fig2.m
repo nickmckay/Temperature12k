@@ -1,8 +1,8 @@
 %% Site location map (Temperature 12k)
 % Cody Routson, Oct 2019
 
-clear, close all
-load TS.mat
+clear
+load('Temp12k_v1_0_0.mat','TS')
 
 
 %% Make sure all the year columns are populated or it breaks the availability plot. Could code more elegantly. 
@@ -27,8 +27,8 @@ Graph{9,1}=[50/255 127/255 81/255];
 
 %marker size and some text styles
 
-style_t = {'FontName','Helvetica','FontSize',14,'FontWeight','bold'};
-style_l = {'FontName','Helvetica','FontSize',12,'FontWeight','bold'};
+style_t = {'FontName','Helvetica','FontSize',15};
+style_l = {'FontName','Helvetica','FontSize',15};
 ms = 8;
 
 
@@ -49,20 +49,8 @@ mg = intersect(mf,ma); %intersect seasons wanted with Temp12k compilation for a 
 
 aproxy = {TS.paleoData_proxyGeneral};
 proxy = aproxy(mg);
-
-%% dealing with un-assigned proxies if necessary
-emptyCells = cellfun(@isempty,proxy);
-proxy(emptyCells) = {'empty'};
-
-%% put macrofossil into biophysical lump
-cl = find(strcmpi('macrofossils',proxy));
-proxy(cl) = {'biophysical'};
-
-cx = find(strcmpi('microfossil',proxy));
-proxy(cx) = {'other microfossil'};
-
-%%
 proxies = unique(proxy);
+
 %% proxy and archive codes
 
 %proxy codes
@@ -90,9 +78,16 @@ ny = length(year);
 nvar = length(mg);
 avail = NaN(ny,nvar);
 
+
 for r = 1:nvar
-    yearMin = round(min(TS(mg(r)).year));
-    yearMax = round(max(TS(mg(r)).year));
+    vals = TS(mg(r)).paleoData_values;
+    nanVals = isnan(vals);
+    yr = TS(mg(r)).year;
+    yr(nanVals) = [];
+    
+    yearMin = round(min(yr));
+    yearMax = round(max(yr));
+    
     avail(ismember(year,[yearMin:yearMax]),r)=1;
     edgec{r} = 'k';
     
@@ -102,7 +97,7 @@ na = length(proxies);
 nproxy = zeros(ny,na); 
 pind = zeros(na,1);
 for a = 1:na % loop over proxies
-    nproxy(:,a) = sum(~isnan(avail(:,p_code == a)),2); %*This gets plotted in proxy temporal availability
+nproxy(:,a) = sum(~isnan(avail(:,p_code == a)),2); %*This gets plotted in proxy temporal availability
     pind(a) = find(p_code == a,1,'first');
 end
 
@@ -152,7 +147,6 @@ for ri = 1:length(sume);
     seasonAvail{sume(ri)} = 'summer';
 end
 
-% seasons = {'summerOnly', 'winterOnly', 'annual'};
 seasons = unique(seasonAvail);
 
 %season codes
@@ -168,8 +162,15 @@ nvarr = length(ma);
 avails = NaN(ny,nvarr);
 
 for r = 1:nvarr
-    yearMin = round(min(TS(ma(r)).year));
-    yearMax = round(max(TS(ma(r)).year));
+    
+    valsa = TS(ma(r)).paleoData_values;
+    nanValsa = isnan(valsa);
+    yrs = TS(ma(r)).year;
+    yrs(nanValsa) = [];
+    
+    yearMin = round(min(yrs));
+    yearMax = round(max(yrs));
+    
     avails(ismember(year,[yearMin:yearMax]),r)=1;
     edgec{r} = 'k';
     
@@ -210,7 +211,7 @@ p_lat = lat(mg);
 % SET THE ST*FF
 % =============
 
-fig('Map'), clf
+fig('Fig2'), clf
 % orient landscape
 set(gcf,'PaperPositionMode','auto')
 
@@ -218,8 +219,7 @@ set(gcf,'PaperPositionMode','auto')
 set(gcf, 'Position', [440   144   1000   1200])
 
 % map pannel size
-hmap=axes('Position', [.05 0.61 0.65 0.4]);
-
+hmap=axes('Position', [.05 0.52 0.9 0.4]);
 % do the map things
 axesm( 'MapProjection','Robinson','MapLatLimit',[ -90 90 ],'MapLonLimit',[ -180 180 ],'MLineLocation',20,...
     'PLineLocation',20,'MeridianLabel','off','ParallelLabel','on',...
@@ -247,26 +247,25 @@ end
 % =============
 % PLOT LEGEND
 % =============
-
+%
 legNames = proxies';
 
-hl = legend(h([pind]),legNames,'location',[.79 .45 .1 .2],style_l{:});
-set(hl, 'FontName', 'Palatino','box','off');
+hl = legend((h(flipud(pind))),flipud(legNames),'location',[.79 .31 .1 .2],style_l{:});
+set(hl,'box','off');
 
-
+%
 % =============
 % PLOT PROXY TEMPORAL COVERAGE
 % =============
 
 %matching color map for proxies
-hstack=axes('Position', [0.08 0.38 0.6 0.22]);
+hstack=axes('Position', [0.08 0.3 0.6 0.18]);
 cmap=cell2mat(Graph(:,1));
-cmap = flipud(cmap); %flipping, flopping and truncating to get the correct colors on the temporal plot to match proxy legend
+% cmap = flipud(cmap); %flipping, flopping and truncating to get the correct colors on the temporal plot to match proxy legend
 cmap = cmap(end-size(nproxy,2)+1:end,:);
 
 colormap(gca,cmap);
 
-nproxy = fliplr(nproxy);
 area(1950-year,nproxy,'EdgeColor','w'), set(gca,'YAxisLocation','Right');
 set(gca, 'XDir', 'reverse')
 xlim([-60 12000])
@@ -283,7 +282,7 @@ set(gca,'Box', 'off', 'TickDir','out','TickLength',[.02 .02],'XMinorTick','off',
 % =============
 
 %[left bottom width height]
-hstack=axes('Position', [0.08 0.07 0.6 0.21]);
+hstack=axes('Position', [0.08 0.07 0.6 0.15]);
 
 %season color map
 col(1,1:3) = rgb('black');
@@ -300,11 +299,9 @@ fancyplot_deco('','year (BP)','# records');
 
 set(gca,'xtick',0:500:12000)
 
-
 set(gca,'Box', 'off', 'TickDir','out','TickLength',[.02 .02],'XMinorTick','off','YMinorTick','on', 'YGrid','on')
 title('Seasonal Availability',style_t{:})
 
-
 hx = legend(HD,seasonal','location',[.79 .1 .1 .2],style_l{:});
-set(hx, 'FontName', 'Palatino','box','off');
+set(hx,'box','off');
 

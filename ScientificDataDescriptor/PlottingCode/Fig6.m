@@ -2,10 +2,10 @@
 %Cody Routson, July 2019
 %% load the things
 
-clear, close all
+clear
 
 cols = brewermap(12,'Paired');
-load TS.mat
+load('Temp12k_v1_0_0.mat','TS')
 load grid.mat
 %% Screen the database
 
@@ -26,7 +26,6 @@ mw = [me; mh]; %winter
 winter = intersect(mw, ma);
 summer = intersect(ms, ma);
 annual = intersect(maa, ma);
-
 
 %% grabbing all latitudes 
 
@@ -53,8 +52,6 @@ Matrix(2).title = '30°-60°N';
 Matrix(1).index = find(lat>=60 & lat<90);
 Matrix(1).title = '60°-90°N';
 
-
-
 %% latitude steps
 latstep = 90:-30:-90;
 
@@ -74,7 +71,6 @@ normStart = 0; %SET START OF NORMALIZATION PERIOD (yr BP)
 normEnd = 12000; %SET END OF NORMALIZATION PERIOD (yr BP)
 latgrid = grid.latgrid;
 longrid = grid.longrid;
-% [latgrid, longrid, regbound] = equalGridDeg(4000, -90);
 
 %% zscore function with NaN values for uncalibrated records
 zscor_xnan = @(x) bsxfun(@rdivide, bsxfun(@minus, x, mean(x,'omitnan')), std(x, 'omitnan')); 
@@ -99,7 +95,6 @@ for i = 1:6; %step through each latitude
     for j=1:length(sum) %step though each record in lat band
         %saving the record names in the latitude bands
         Matrix(i).namesSummer{j,1} = TS(sum(j)).dataSetName;
-        
         
         sumLatData(j,1) = cell2mat({TS(sum(j)).geo_meanLat});
         sumLonData(j,1) = cell2mat({TS(sum(j)).geo_meanLon});
@@ -180,7 +175,7 @@ for i = 1:6; %step through each latitude
     
     %=======D Gridding and compositing workflow. 
     
-    %SUMMER. Doing if if missing records for a band. 
+    %SUMMER. Doing this for cases when we are missing records for a band. 
     if size(sumMat,2)>1 
         Tsunom=zscor_xnan(sumMat); 
         [sumComp,unGridGroups,unGridGroupsLat,unGridGroupsLon,sumGridMean] = gridMat(Tsunom,sumLatData,sumLonData,latgrid,longrid); %GRIDD run gridMat and collect total mean into a matrix
@@ -190,8 +185,7 @@ for i = 1:6; %step through each latitude
         Matrix(i).sumMedian = Tsunom;
     end
     
-    
-    %WINTER. Doing if if missing records for a band. 
+    %WINTER. Doing in case missing records for a band. 
     if size(wintMat,2)>1 
         Twinom=zscor_xnan(wintMat); 
         [winComp,unGridGroups,unGridGroupsLat,unGridGroupsLon,wintGridMean] = gridMat(Twinom,wintLatData,wintLonData,latgrid,longrid); %GRIDD run gridMat and collect total mean into a matrix
@@ -223,7 +217,6 @@ for i = 1:6; %step through each latitude
     as = bootstrp(500,@nanmedian,annGridMean');
     Matrix(i).annEnsemble = as';
     
-
     %clear stuff for next loop
     clear bin_mean
     clear wintMat
@@ -237,17 +230,14 @@ for i = 1:6; %step through each latitude
     clear sumLatData
     clear annLonData
     clear annLatData
-    i
+    i %clumsy loop progress tracking
 end
 
 
 %% plotting
 bands = Matrix;
 
-
 % Fig5_plot
-
-close all
 
 cc = 1.1;
 
@@ -255,7 +245,7 @@ style_l = {'FontName','Heveltica','FontSize',12,'FontWeight','bold'};
 style_i = {'FontName','Heveltica','FontSize',10};
 
 
-figure
+fig('Fig6')
 
 %
 FontSize = 16;
@@ -328,14 +318,13 @@ for i = 1:6;
             set(ax(2),'Ytick',0:10:roundn(max(bands(i).annSampleDepth),1))
         end
     end
-
     
     set(get(ax(1),'ylabel'),'String',[bands(i).title]);
     set(get(ax(1),'Ylabel'),'FontName','Heveltica','FontSize',12,'color',[0 0 0]),
     
-    
     % plot records in left panels
     clear sx
+    
     %set subplot position and size
     sx = subplot(round(length(bands)),2,i+i-1);
     sx.Position = sx.Position + [0.0 0 .05 0];
@@ -346,13 +335,13 @@ for i = 1:6;
         area_fill(bands(i).time',[bands(i).sumMedian+nanstd(bands(i).sumEnsemble,0,2)]',[bands(i).sumMedian-nanstd(bands(i).sumEnsemble,0,2)]',rgb('firebrick'),rgb('firebrick'),1,0.2);
     end
     hold on
-    %one composites
+    %wint composites
     if max(bands(i).wintSampleDepth)>=5
         hb = plot(bands(i).time,bands(i).wintMedian,'linewidth',2,'color',rgb('steelblue'));
         area_fill(bands(i).time',[bands(i).wintMedian+nanstd(bands(i).wintEnsemble,0,2)]',[bands(i).wintMedian-nanstd(bands(i).wintEnsemble,0,2)]',rgb('steelblue'),rgb('steelblue'),1,0.2);
     end
     hold on
-    %one composites
+    %ann composites
     if max(bands(i).annSampleDepth)>=5
         hc = plot(bands(i).time,bands(i).annMedian,'linewidth',2,'color',rgb('black'));
         area_fill(bands(i).time',[bands(i).annMedian+nanstd(bands(i).annEnsemble,0,2)]',[bands(i).annMedian-nanstd(bands(i).annEnsemble,0,2)]',rgb('gray'),rgb('gray'),1,0.2);
@@ -366,6 +355,20 @@ for i = 1:6;
     set(gca,'XColor' , [.3 .3 .3], 'YColor', [.3 .3 .3], 'LineWidth', 1);
     set(gca,'yLim',[nanmean(plotScale1)-1.5 nanmean(plotScale1)+1.5])
 
+end
+
+%% getting the data to save for later
+for j = 1:6
+    BA.a(:,j) = bands(j).annMedian;
+    BA.b(:,j) = bands(j).wintMedian;
+    BA.c(:,j) = bands(j).sumMedian;
     
+    BA.asd(:,j) = nanstd(bands(j).annEnsemble,0,2);
+    BA.bsd(:,j) = nanstd(bands(j).wintEnsemble,0,2);
+    BA.csd(:,j) = nanstd(bands(j).sumEnsemble,0,2);
+    
+    BA.aa(:,j) = bands(j).annSampleDepth;
+    BA.bb(:,j) = bands(j).wintSampleDepth;
+    BA.cc(:,j) = bands(j).sumSampleDepth;
 end
 

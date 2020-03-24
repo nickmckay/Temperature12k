@@ -2,25 +2,23 @@
 %Cody Routson, July 2019
 %% load the things
 
-clear, close all
+clear
 
 cols = brewermap(12,'Paired');
-load TS.mat
+load('Temp12k_v1_0_0.mat','TS')
 load grid.mat
 
 %% Screen the database
 maxRes = 400; %SET RESOLUTION (MAXIMUM INTERVAL BETWEEN SAMPLES)
 minRes = 100;
 
-
 allYears = {TS.age};
 
-age10k = cellfun(@(x) x(x<12000), allYears,'UniformOutput',0);
-emp =find(cellfun(@isempty,age10k));
-age10k(emp)={NaN};
+age12k = cellfun(@(x) x(x<12000), allYears,'UniformOutput',0);
+emp =find(cellfun(@isempty,age12k));
+age12k(emp)={NaN};
 
-medRes = cellfun(@(x) median(abs(diff(x))),age10k);
-
+medRes = cellfun(@(x) median(abs(diff(x))),age12k);
 
 %% Screening for high and low resolution records in Temp12k
 mch = find(strcmp('Temp12k',{TS.paleoData_inCompilation}') & (medRes <= minRes)');
@@ -62,13 +60,11 @@ Matrix(1).index = find(lat>=60 & lat<90);
 Matrix(1).title = '60°-90°N';
 
 
-
 %% latitude steps
 latstep = 90:-30:-90;
 
-
 %% preallocate Bins
- %binning at lower resolution to calculate sample depts
+ %binning at lower resolution to calculate sample depths for plotting
 binStep=500; %SET BINSTEP
 binEdges=[0 12000]; %SET PERIOD OF ANALYSIS (yr BP)
 binVec=min(binEdges):binStep:max(binEdges);
@@ -135,7 +131,7 @@ for i = 1:6; %step through each latitude
     clear bin_mean
     clear bin_mean2
     
-    %=======D Bin the records into matrices for the LOWRES
+    %=======D Bin the records into matrices for the LOW RES
     
     if ~isempty(lowRes)
     for j=1:length(lowRes) %step though each record in lat band
@@ -157,7 +153,6 @@ for i = 1:6; %step through each latitude
         lowMat(1:24,1) = NaN;
     end
     
-    
     %=======D getting sample depths 
     
     dw = ~isnan(highMat);
@@ -178,9 +173,7 @@ for i = 1:6; %step through each latitude
     Matrix(i).plotEdgesHigh = plotEdges2;
     Matrix(i).plotEdges = plotEdges;
     
-
     %=======D Gridding and compositing workflow. 
-    
     
       %HIGH RESOLUTION. Doing "if" if missing records for a band. 
     if size(highMat,2)>1 
@@ -192,7 +185,6 @@ for i = 1:6; %step through each latitude
         Matrix(i).highMedian = Thinom;
     end
     
-    
     %LOW RESOLUTION. Doing "if" if missing records for a band.
     if size(lowMat,2)>1 
         Tlonom=zscor_xnan(lowMat); 
@@ -203,7 +195,6 @@ for i = 1:6; %step through each latitude
         Matrix(i).lowMedian = Tlonom;
     end
     
-    
     %=======D Bootstrap ensembles
 
     p = bootstrp(500,@nanmedian,highGridMean');
@@ -211,7 +202,6 @@ for i = 1:6; %step through each latitude
     
     q = bootstrp(500,@nanmedian,lowGridMean');
     Matrix(i).lowEnsemble = q';
-    
     
     %clear stuff for next loop
     clear bin_mean
@@ -235,21 +225,16 @@ end
 %% Sending latitudinal bands away for plotting
 bands = Matrix;
 
-
-% Fig6_plot
+% Fig7_plot
 cc = 1.1;
-
-
 
 cols = [cols; 0.2157    0.4941    0.7216];
 
 style_l = {'FontName','Heveltica','FontSize',12,'FontWeight','bold'};
 style_i = {'FontName','Heveltica','FontSize',10};
 
+fig('Fig7')
 
-figure
-
-%
 FontSize = 16;
 FontName = 'Heveltica';
 
@@ -318,8 +303,7 @@ for i = 1:6;
 
     set(get(ax(1),'ylabel'),'String',[bands(i).title]);
     set(get(ax(1),'Ylabel'),'FontName','Heveltica','FontSize',12,'color',[0 0 0]),
-    
-    
+     
     % plot records in left panels
     clear sx
     %set subplot position and size
@@ -349,6 +333,15 @@ for i = 1:6;
     clear allSampleDepth
 end
 
+%% putting things into a structure for safe keeping
+for j = 1:6
+    BA.a(:,j) = bands(j).lowMedian;
+    BA.b(:,j) = bands(j).highMedian;
+    
+    BA.asd(:,j) = nanstd(bands(j).lowEnsemble,0,2);
+    BA.bsd(:,j) = nanstd(bands(j).highEnsemble,0,2);
 
+    BA.aa(:,j) = bands(j).lowSampleDepth;
+    BA.bb(:,j) = bands(j).highSampleDepth;
 
-
+end
