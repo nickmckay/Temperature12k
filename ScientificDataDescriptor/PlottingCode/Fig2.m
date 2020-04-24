@@ -229,7 +229,7 @@ paperscale;
 axis off; framem on;
 
 geoshow('landareas.shp', 'FaceColor', [0.8 0.8 0.8])
-gridm('glinestyle','.','plinelocation',20)
+gridm('glinestyle',':','plinelocation',20)
 
 load coast;
 linem(lat,long,'Color','k','LineWidth',2);

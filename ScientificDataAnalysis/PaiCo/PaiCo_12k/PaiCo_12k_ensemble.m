@@ -1,4 +1,4 @@
-%% Get help on PaiCo
+    %% Get help on PaiCo
 
 % help rtstruct
 % data = rtstruct()
