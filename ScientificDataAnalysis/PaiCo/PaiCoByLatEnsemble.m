@@ -10,7 +10,7 @@ end
 %% Binning the records
 % %OLD
 % if doBinning
-%     bins = 11950:-binWidth:-50; %from 11950 to -50 yr BP, i.e., from -10000 to 2000 CE
+%     bins = 12050:-binWidth:-50; %from 12050 to -50 yr BP, i.e., from -10100 to 2000 CE
 %     binsMidyear = bins(1:end-1) - binWidth/2;
 %     for i = 1:numel(proxyRec)
 %         values = [];
@@ -37,7 +37,7 @@ if doNoise
         proxyRec(i).ageOrig = proxyRec(i).age; %just for test purposes
         % for each year, choose the neares available value. Take the mean
         % in case 2 values are equally close
-        proxyStart = min([11950,max(proxyRec(i).age)]);
+        proxyStart = min([12050,max(proxyRec(i).age)]);
         proxyEnd = max([-50,min(proxyRec(i).age)]);
         for k = proxyStart:-1:proxyEnd
             proxyRec(i).ageInfilled(proxyStart+1-k) = k;
@@ -64,7 +64,7 @@ if doBinning
     
     
     
-    bins = 11950:-binWidth:-50; %from 11950 to -50 yr BP, i.e., from -10000 to 2000 CE
+    bins = 12050:-binWidth:-50; %from 12050 to -50 yr BP, i.e., from -10100 to 2000 CE
     binsMidyear = bins(1:end-1) - binWidth/2;
     for i = 1:numel(proxyRec)
         
@@ -93,7 +93,7 @@ if doBinning
         proxyRec(i).ageOrig = proxyRec(i).age; %just for test purposes
         % for each year, choose the neares available value. Take the mean
         % in case 2 values are equally close
-        proxyStart = min([11950,max(proxyRec(i).age)]);
+        proxyStart = min([12050,max(proxyRec(i).age)]);
         proxyEnd = max([-50,min(proxyRec(i).age)]);
         for k = proxyStart:-1:proxyEnd
             proxyRec(i).ageInfilled(proxyStart+1-k) = k;
@@ -155,9 +155,9 @@ for i = 1:nLatBands
     
     %% Define target output
     if ~annualiseBins
-        target.times = -10000:1:2000; %using CE
+        target.times = -10100:1:2000; %using CE
     else
-        target.timesReal = (-10000+binWidth/2):binWidth:(2000-binWidth/2);
+        target.timesReal = (-10100+binWidth/2):binWidth:(2000-binWidth/2);
         target.times =(target.timesReal+binWidth/2)/binWidth;
     end
     
