@@ -18,4 +18,4 @@ The other functions, scripts and datasets in the directory will are necessary he
 
 #### Code used to generate 12k reconstructions
 
-The data and code used to produce the reconstructions in Scientific Data Analysis paper are also archived in this repository. Note, as of December 2019, not although the code sets are complete, they may not work out of the box on most systems. Look for improvements in interoperability and documentation in coming months. 
+The data and code used to produce the reconstructions in Scientific Data Analysis paper, as well as plotting code, is also archived in this repository. These are up to date with the publication version of the paper, but they may not work out of the box on most systems. We hope present some of the methods as notebooks in the future. Please post an issue or get in touch with us if you're having trouble running the code. 
