@@ -1,7 +1,9 @@
 # gridding-temp12k
 Package to grid the Temperature12K database
 
-This repository contains the scripts to compute a gridded representation of the
+This code has been developed by Philipp S. Sommer ([@Chilipp](https://github.com/Chilipp)) and is further maintained and developed in the [Chilipp/gridding-temp12k](https://github.com/Chilipp/gridding-temp12k) repository.
+
+The folder contains the scripts to compute a gridded representation of the
 Temperature12k LiPD files. The important scripts are
 
 - [scripts/compute-annual-gmst.ipynb](scripts/compute-annual-gmst.ipynb): This
