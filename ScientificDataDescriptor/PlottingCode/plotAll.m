@@ -1,0 +1,6 @@
+run('Fig2.m')
+run('Fig4.m')
+run('Fig5.m')
+run('Fig6.m')
+run('Fig7.m')
+run('Fig8.m')

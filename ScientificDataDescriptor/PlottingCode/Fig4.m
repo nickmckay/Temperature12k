@@ -1,27 +1,24 @@
 %% proxy plot, Temperature 12k (Figure 4)
 %Cody Routson, Oct 2019
 
-clear; close all
+clear
 
-load TS.mat
-
+load('Temp12k_v1_0_0.mat','TS')
 
 binStep=500; %SET BINSTEP
 binEdges=[0 12000]; %SET PERIOD OF ANALYSIS (yr BP)
-% variable = 'T';%SET VARIABLE OF INTEREST 'M', 'T', etc.
 normStart = 0; %SET START OF NORMALIZATION PERIOD (yr BP)
 normEnd = 12000; %SET END OF NORMALIZATION PERIOD (yr BP)
-%%
+%% Indexing the data
 ma = find(strcmp('Temp12k',{TS.paleoData_inCompilation}')); %index the compilation
 
 mb = find(strncmp('annual',{TS.interpretation1_seasonalityGeneral}',7)); %index all annual records
 mc = find(strncmp('summerOnly',{TS.interpretation1_seasonalityGeneral}',7)); %index all SummerOnly records
 me = find(strncmp('winterOnly',{TS.interpretation1_seasonalityGeneral}',7)); %index all WinterOnly records
-
 mf = [mb; mc; me]; %index of annual, summer and winter
 
 mg = intersect(mf,ma); %intersect seasons with compilation for a USE IN index
-%%
+%% proxy specific indexes
 mgca = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'Mg/Ca'),TS));
 alk = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'alkenone'),TS));
 pollen = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'pollen'),TS));
@@ -32,8 +29,7 @@ isotope = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'isotope'),TS));
 microfossil = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'other microfossil'),TS));
 otherIce = find(arrayfun(@(x)strcmp(x.paleoData_proxyGeneral,'other ice'),TS));
 
-
-%% preallocating the latitudinal bands
+%% preallocating stuff for the plotting into a structure
 
 Matrix(8).index =  intersect(mg,microfossil);
 Matrix(8).title = 'other microfossil';
@@ -76,11 +72,9 @@ binMid = binMid';
 
 plotEdges=reshape([binVec(1:end-1) binVec(2:end)]',[],1);
 
+%% Loop though each proxy and calculate the temperature average. Include # of records contributing to average.
 
-%% Loop though each latitude and calculate the latitudnal temperature average. Include # of records contributing to average.
-
-
-for i = 1:8; %step through each proxy
+for i = 1:8 %step through each proxy
     
     % index of records within latitude band
     d = Matrix(i).index; %intersect(mg,banding);
@@ -97,12 +91,10 @@ for i = 1:8; %step through each proxy
             bin_mean = -1*bin_mean; %Flipping if interpretation direction negative
         end
         
-        
         bin_mean=(bin_mean-nanmean(bin_mean))/nanstd(bin_mean);
         %putting the records from a band in a matrix
         Tmat(:,j) = bin_mean;
     end
-    
     
     Tcomp = nanmean(Tmat,2);
     
@@ -112,44 +104,38 @@ for i = 1:8; %step through each proxy
     Matrix(i).time = binMid;
     Matrix(i).plotEdges = plotEdges;
     
-    
-    
     %sample depth
     t = ~isnan(Tmat);
     t2 = sum(t,2);
     Matrix(i).sampleDepth = t2;
     
-    
-    %bootstrap sampllin
+    %bootstrap sampling
     records = Matrix(i).records;
     
     p_boot = bootstrp(1000,@nanmean,records');
     
     Matrix(i).medianEnsemble = p_boot';
     
-    
-    
     clear Tcomp
     clear t2
     clear Tmat
-    
+ 
 end
 
 
 %% plotting
 bands = Matrix;
 
-
 cc = 1.1;
 
 style_l = {'FontName','Heveltica','FontSize',12,'FontWeight','bold'};
 style_i = {'FontName','Heveltica','FontSize',10};
 
-
-figure
+fig('Fig4')
 
 for i = 1:length(bands);
     
+    %get some error bars
     ci_archs(i).quant  = quantile(bands(i).medianEnsemble,[0.025 0.975],2);
     ciLo = reshape([ci_archs(i).quant(:,1) ci_archs(i).quant(:,1)]',[],1);
     ciHi = reshape([ci_archs(i).quant(:,2) ci_archs(i).quant(:,2)]',[],1);
@@ -159,12 +145,14 @@ for i = 1:length(bands);
     
     plotScale=reshape([ensembleMedian ensembleMedian]',[],1);
     
+    %start the subplotting
     subplot(round(length(bands)/2),2,i);
     
     [ax,h1,h2] = plotyy(bands(i).time,bands(i).sampleDepth,bands(i).plotEdges,plotScale,@bar,@line); hold on
     set(h1,'facecolor',rgb('Gainsboro'),'edgecolor','none')
     set(ax(1),'Ycolor',rgb('Silver'),'YAxisLocation','right','TickDir','out','YMinorTick','off')
     set(get(ax(1),'Ylabel'),'String','# records')
+    
     %set sample depth plot limits and things
     set(get(ax(1),'Ylabel'),style_l{:}), set(ax(1),'yLim',[0 max(bands(i).sampleDepth)+5]), %set(ax(1),'Ytick',10:10:roundn(max(bands(i).sampleDepth),1))
     set(h2,'color',bands(i).color,'linewidth',2);
@@ -192,7 +180,7 @@ for i = 1:length(bands);
     set(ax(2),'XTick',[])
     ch = get(h1,'child'); set(ch,'EdgeAlpha',.3)
     
-    
+    %add some titles
     if i == 1
         h = title([bands(i).title ', n = ' int2str(size(bands(i).records,2)) ''],'fontname','Heveltica');
         P = get(h,'Position');
@@ -200,25 +188,22 @@ for i = 1:length(bands);
         set(gcf,'color','white')
         
     else
-        
         h = title([bands(i).title ', n = ' int2str(size(bands(i).records,2)) ' '],'fontname','heveltica');
         P = get(h,'Position');
         set(h,'Position',[P(1) P(2)-0.5 P(3)])
         set(gcf,'color','white')
     end
     
-    
+    %setting some axis limits based on sample depths for looks
     if max(bands(i).sampleDepth)>=200
-        
         set(ax(1),'Ytick',0:100:roundn(max(bands(i).sampleDepth),2))
     elseif max(bands(i).sampleDepth)>=60
         set(ax(1),'Ytick',0:20:roundn(max(bands(i).sampleDepth),1))
     else
-        
         set(ax(1),'Ytick',0:10:roundn(max(bands(i).sampleDepth),1))
     end
     
-    
+    %laveling x-axis of the last plots in the loop
     if i == 7;
         set(get(ax(1),'Xlabel'),'String','year (BP) ')
         set(get(ax(1),'Xlabel'),style_i{:})
@@ -230,10 +215,4 @@ for i = 1:length(bands);
     end
     
 end
-
-
-
-
-
-
 

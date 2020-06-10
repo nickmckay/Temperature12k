@@ -2,9 +2,9 @@
 %Cody Routson, July 2019
 %% load the things
 
-clear, close all
+clear
 
-load TS.mat
+load('Temp12k_v1_0_0.mat','TS')
 load PAGES_multiMethodMeadian.txt;
 load grid.mat;
 
@@ -81,7 +81,6 @@ longrid = grid.longrid;
 % grid.longrid = longrid;
 % grid.grebound = regbound;
 % save grid.mat grid;
-
 
 %% zscore function with NaN values for uncalibrated records
 zscor_xnan = @(x) bsxfun(@rdivide, bsxfun(@minus, x, mean(x,'omitnan')), std(x, 'omitnan'));
@@ -167,8 +166,6 @@ for i = 1:6; %step through each 30° latitude band
         uncalMat(1:length(BinTime),1) = NaN;
     end
     
-   
-
     %=======D saving st*ff
     
     Matrix(i).calRecords = (calMat);
@@ -233,8 +230,7 @@ for i = 1:6; %step through each 30° latitude band
     %uncalibrted
     p = bootstrp(1000,@nanmean,unGridMean');
     Matrix(i).uncalEnsemble = p';
-    
-    
+        
     %clear st*ff for next loop
     clear bin_mean
     clear calMat
@@ -297,7 +293,7 @@ allStdGlobal = nanmean(standardDev,2);
 calAnnStdGlobal = nanmean(standardDevAnn,2);
 uncalStdGlobal = nanmean(uncalStd,2);
 
-%% subtracting the correct median from the pages data
+%% subtracting the 500-1500 median from the pages data
 p2k.time = PAGES_multiMethodMeadian(:,1);
 p2k.tmp = PAGES_multiMethodMeadian(:,2);
 
@@ -309,12 +305,9 @@ p2k.tmp = p2k.tmp-gt;
 %bin the pages
 [bin_mean2k, BinTime2k, sem, bin_sum] =  bin_x(p2k.time,p2k.tmp,binVec);
 
-%% save some j*nk
-% save bandsFig6.mat bands
-
 %% Plot
 style_l = {'FontName','Heveltica','FontSize',12,'FontWeight','bold'};
-figure(1)
+fig('Fig8')
 clf
 
 %timeseries subplot

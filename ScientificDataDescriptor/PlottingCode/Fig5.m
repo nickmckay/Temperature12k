@@ -2,10 +2,9 @@
 %Cody Routson, July 2019
 %% load the things
 
-clear, close all
-
+clear
 cols = brewermap(12,'Paired');
-load TS.mat
+load('Temp12k_v1_0_0.mat','TS')
 load grid.mat
 %% Screen the database
 ma = find(strcmp('Temp12k',{TS.paleoData_inCompilation}')); %index the compilation
@@ -65,7 +64,6 @@ plotEdges=reshape([binVec(1:end-1) binVec(2:end)]',[],1);
 %% set the equal areas for griddng 
 normStart = 0; %SET START OF NORMALIZATION PERIOD (yr BP)
 normEnd = 12000; %SET END OF NORMALIZATION PERIOD (yr BP)
-% [latgrid, longrid, regbound] = equalGridDeg(4000, -90);
 latgrid = grid.latgrid;
 longrid = grid.longrid;
 
@@ -85,7 +83,6 @@ for i = 1:6; %step through each latitude
     % want in the latitudinal intervals
     dirt = intersect(terrest,banding);
     wet = intersect(marine,banding);
-
     
     %%=======D Bin the records into matrices for marine
     
@@ -118,7 +115,6 @@ for i = 1:6; %step through each latitude
         %saving the record names in the latitude bands
         Matrix(i).namesTerrest{j,1} = TS(dirt(j)).dataSetName;
         
-        
         dryLatData(j,1) = cell2mat({TS(dirt(j)).geo_meanLat});
         dryLonData(j,1) = cell2mat({TS(dirt(j)).geo_meanLon});
         
@@ -146,9 +142,7 @@ for i = 1:6; %step through each latitude
     Matrix(i).time = binMid;
     Matrix(i).plotEdges = plotEdges;
 
-    
     %=======D Gridding and compositing workflow. 
-    
     
     %uncalibrated records
     oMean=nanmean(wetMat(binMid>normStart & binMid<normEnd,:),1); %using the mean for some period to compute anomalies %Default is to normalize over the whole 12000 year interval. 
@@ -166,8 +160,7 @@ for i = 1:6; %step through each latitude
         Tunom=zscor_xnan(dryMat);
         Matrix(i).terrestMedian = Tunom;
     end
-    
-    
+     
     %=======D Bootstrap ensembles
 
     m = bootstrp(500,@nanmedian,gridMean');
@@ -195,24 +188,23 @@ end
 %% scheming and plotting
 bands = Matrix;
 
-close all
 cc = 1.1;
-
 
 style_l = {'FontName','Heveltica','FontSize',12,'FontWeight','bold'};
 style_i = {'FontName','Heveltica','FontSize',10};
 
+fig('Fig5')
 
-figure
 
 %
 FontSize = 16;
 FontName = 'Heveltica';
 
 for i = 1:6;
-
+    
+    
     allSampleDepth = sum([bands(i).oceanSampleDepth,bands(i).terrestSampleDepth],2);
-    %0cean. Just use this to scale an axis. Find a better way. 
+    %0cean. Just using this to scale an axis. Find a better way. 
     ensembleMedian = bands(i).oceanMedian;
     plotScale1=reshape([ensembleMedian ensembleMedian]',[],1);
     
@@ -227,15 +219,14 @@ for i = 1:6;
     %set subplot position and size
     sz = subplot(round(length(bands)),2,i+i);
     sz.Position = sz.Position + [0.05 0 -.05 0]; %set positon and width
-   
 
     %marine records and sambple bars
     [ax,h1,h2] = plotyy(bands(i).time,allSampleDepth,bands(i).plotEdges,reshape([bands(i).oceanSampleDepth bands(i).oceanSampleDepth]',[],1),@bar,@line); hold on %% 'color', rgb('darkcyan'), 'linewidth',2);
     hold(ax(1))
     hold(ax(2))
+    
     %terrestrial records
     plot(ax(2),bands(i).plotEdges,reshape([bands(i).terrestSampleDepth bands(i).terrestSampleDepth]',[],1), 'color', rgb('peru'), 'linewidth',2);
-    %     hold on
     
     %set stuff for bar graph
     set(h1,'facecolor',rgb('Gainsboro'),'edgecolor','none')
@@ -314,3 +305,14 @@ for i = 1:6;
     
 end
 
+%% getting the data to save for later
+for j = 1:6
+    BA.a(:,j) = bands(j).terrestMedian;
+    BA.b(:,j) = bands(j).oceanMedian;
+    
+    BA.asd(:,j) = nanstd(bands(j).terrestEnsemble,0,2);
+    BA.bsd(:,j) = nanstd(bands(j).oceanEnsemble,0,2);
+    
+    BA.aa(:,j) = bands(j).terrestSampleDepth;
+    BA.bb(:,j) = bands(j).oceanSampleDepth;
+end
